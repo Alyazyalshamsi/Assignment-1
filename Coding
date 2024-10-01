@@ -54,3 +54,5 @@ class Reservation:
             "check_out": self._check_out_date,
             "number_of_nights": self._number_of_nights,
             "total_cost": self._total_cost,
+            "booking_method": self._booking_method,
+            "smoking": room_details['smoking']}
