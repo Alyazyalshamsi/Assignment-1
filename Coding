@@ -5,5 +5,10 @@ class User:
         self._contact_number = contact_number
         self._payment_method = payment_method
 
-
+    def get_user_details(self):
+        return {
+            "username": self._username,
+            "email": self._email,
+            "contact_number": self._contact_number,
+            "payment_method": self._payment_method}
 
