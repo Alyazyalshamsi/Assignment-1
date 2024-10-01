@@ -41,3 +41,16 @@ class Reservation:
         self._number_of_nights = number_of_nights
         self._total_cost = total_cost
         self._booking_method = booking_method
+
+    def view_reservation(self):
+        room_details = self._room.get_room_details()
+        user_details = self._user.get_user_details()
+        return {
+            "reservation_number": self._reservation_number,
+            "user_name": user_details['user_name'],
+            "email": user_details['email'],
+            "room_type": room_details['room_type'],
+            "check_in": self._check_in_date,
+            "check_out": self._check_out_date,
+            "number_of_nights": self._number_of_nights,
+            "total_cost": self._total_cost,
