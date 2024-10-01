@@ -1,4 +1,9 @@
 class User:
     def __init__(self, user_name, email, contact_number, payment_method):
+        self._user_name = user_name
+        self._email = email
+        self._contact_number = contact_number
+        self._payment_method = payment_method
+
 
 
