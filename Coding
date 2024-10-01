@@ -56,3 +56,24 @@ class Reservation:
             "total_cost": self._total_cost,
             "booking_method": self._booking_method,
             "smoking": room_details['smoking']}
+
+    def request_late_checkout(self):
+        pass  
+
+room = Room(room_number=101, room_type="2 Queen Beds", smoking=False, cost_per_night=89.95,
+            amenities=["Desk", "Safe", "Coffee Maker", "Hair Dryer"])
+
+user = User(user_name="Ted Vera", email="tedvera@mac.com", contact_number="505-651-1110",
+            payment_method={"type": "Mastercard", "last_digits": "9904"})
+
+reservation = Reservation(reservation_number=52523687, user=user, room=room, 
+                          check_in_date="2024-08-22 03:00 PM",
+                          check_out_date="2024-08-24 12:00 PM", 
+                          number_of_nights=2, total_cost=201.48, 
+                          booking_method="Online")  # Specify booking method
+
+
+reservation_details = reservation.view_reservation()
+print("\nReservation Details:")
+for key, value in reservation_details.items():
+    print(f"{key}: {value}")
