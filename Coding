@@ -20,10 +20,13 @@ class Room:
         self._cost_per_night = cost_per_night
         self._amenities = amenities  
 
-def get_room_details(self):
+    def get_room_details(self):
         return {
             "room_number": self._room_number,
             "room_type": self._room_type,
             "smoking": self._smoking,
             "cost_per_night": self._cost_per_night,
             "amenities": self._amenities}
+
+    def add_breakfast(self):
+        pass  
