@@ -30,3 +30,13 @@ class Room:
 
     def add_breakfast(self):
         pass  
+
+class Reservation:
+    def __init__(self, reservation_number, user, room, check_in_date, check_out_date, number_of_nights, total_cost):
+        self._reservation_number = reservation_number
+        self._user = user
+        self._room = room
+        self._check_in_date = check_in_date
+        self._check_out_date = check_out_date
+        self._number_of_nights = number_of_nights
+        self._total_cost = total_cost
