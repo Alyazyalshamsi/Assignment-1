@@ -7,8 +7,15 @@ class User:
 
     def get_user_details(self):
         return {
-            "username": self._username,
+            "user_name": self._user_name,
             "email": self._email,
             "contact_number": self._contact_number,
             "payment_method": self._payment_method}
 
+class Room:
+    def __init__(self, room_number, room_type, smoking, cost_per_night, amenities):
+        self._room_number = room_number
+        self._room_type = room_type
+        self._smoking = smoking  
+        self._cost_per_night = cost_per_nightt
+        self._amenities = amenities  
