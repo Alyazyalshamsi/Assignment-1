@@ -60,6 +60,24 @@ class Reservation:
     def request_late_checkout(self):
         pass  
 
+# Adding the Cancellation class here
+class Cancellation:
+    def __init__(self, reservation, cancellation_date, refund_amount, cancellation_reason):
+        self._reservation = reservation
+        self._cancellation_date = cancellation_date
+        self._refund_amount = refund_amount
+        self._cancellation_reason = cancellation_reason
+
+    def get_cancellation_details(self):
+        reservation_details = self._reservation.view_reservation()
+        return {
+            "reservation_number": reservation_details["reservation_number"],
+            "cancellation_date": self._cancellation_date,
+            "refund_amount": self._refund_amount,
+            "cancellation_reason": self._cancellation_reason
+        }
+
+# Creating instances for testing
 room = Room(room_number=101, room_type="2 Queen Beds", smoking=False, cost_per_night=89.95,
             amenities=["Desk", "Safe", "Coffee Maker", "Hair Dryer"])
 
@@ -70,9 +88,13 @@ reservation = Reservation(reservation_number=52523687, user=user, room=room,
                           check_in_date="2024-08-22 03:00 PM",
                           check_out_date="2024-08-24 12:00 PM", 
                           number_of_nights=2, total_cost=201.48, 
-                          booking_method="Online")  # Specify booking method
+                          booking_method="Online")
 
+# Creating a Cancellation instance
+cancellation = Cancellation(reservation=reservation, cancellation_date="2024-08-21",
+                            refund_amount=201.48, cancellation_reason="Personal reasons")
 
+# Viewing reservation and cancellation details
 reservation_details = reservation.view_reservation()
 print("\nReservation Details:")
 for key, value in reservation_details.items():
